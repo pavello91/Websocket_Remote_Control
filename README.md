@@ -9,23 +9,20 @@
 ## Usage
 **Development**
 
-`npm run start:dev`
+`npm run start`
 
 * App served @ `http://localhost:8181` with nodemon
 
-**Production**
+## Details
 
-`npm run start`
+Using websocket you can:
 
-* App served @ `http://localhost:8181` without nodemon
-
----
-
-**All commands**
-
-Command | Description
---- | ---
-`npm run start:dev` | App served @ `http://localhost:8181` with nodemon
-`npm run start` | App served @ `http://localhost:8181` without nodemon
-
-**Note**: replace `npm` with `yarn` in `package.json` if you use yarn.
+ - Move mouse up (↑ arrow on keyboard)
+ - Move mouse down (↓ arrow)
+ - Move mouse left (← arrow)
+ - Move mouse right (→ arrow)
+ - Send mouse coordinates ("p" key)
+ - Draw circle ("c" key)
+ - Draw rectangle ("r" key)
+ - Draw square ("s" key)
+ - Send screen image ("ctrl + p" key)
