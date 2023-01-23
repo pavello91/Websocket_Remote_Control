@@ -1,22 +1,20 @@
 {
-    "compilerOptions": {
-      "target": "ES6",
-      "module": "CommonJS",
-      "moduleResolution": "node",
-      "outDir": "dist",
-      "resolveJsonModule": true,
-      "emitDecoratorMetadata": true,
-      "esModuleInterop": true,
-      "experimentalDecorators": true,
-      "sourceMap": true,
-      "noImplicitAny": true,
-      "allowUnreachableCode": false,
-      "alwaysStrict": true,
-      "strict": true
-   },
-   "include": ["src/**/*.ts", "./index.ts"],
-   "exclude": ["node_modules", "**/*.spec.ts"],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "target": "es6",
+    "module": "esnext",
+    "noImplicitAny": true,
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "outDir": "./dist"
+  },
     "ts-node": {
-      "esm": true
-    },
-  }
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": [ "node_modules"]
+}

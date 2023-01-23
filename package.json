@@ -4,8 +4,7 @@
     "description": "Template for the WebSocket remote control task",
     "main": "index.js",
     "scripts": {
-        "start": "webpack && node ./dist/index.js",
-        "start:dev": "nodemon --exec ts-node ./index.ts",
+        "start": "cross-env NODE_ENV=devel nodemon",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Andrei Auchynnikau",
