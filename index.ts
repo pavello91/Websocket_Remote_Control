@@ -2,6 +2,7 @@ import { httpServer } from "./src/http_server/index";
 import { WebSocketServer, createWebSocketStream } from 'ws';
 import navigationController from './src/navigation';
 import drawingController from './src/drawing';
+import screenshotController from './src/screenshot';
 
 const HTTP_PORT = 8181;
 
@@ -37,8 +38,10 @@ wss.on('connection', (ws, request) => {
         ws.send(command)
           drawingController(command, args)
       }
-
-     
+      if (command === 'prnt_scrn') {
+        const res = await screenshotController()
+        ws.send(res)
+      }
     })
 
 })
