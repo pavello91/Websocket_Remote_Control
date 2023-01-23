@@ -1,7 +1,7 @@
 import { httpServer } from "./src/http_server/index";
 import { WebSocketServer, createWebSocketStream } from 'ws';
 import navigationController from './src/navigation';
-import { mouse } from "@nut-tree/nut-js";
+import drawingController from './src/drawing';
 
 const HTTP_PORT = 8181;
 
@@ -15,7 +15,12 @@ const commands = {
       'mouse_down',
       'mouse_right',
       'mouse_position'
-    ]}
+    ],
+  drawing: [
+    'draw_circle',
+    'draw_rectangle',
+    'draw_square'
+  ]}
 
 const wss = new WebSocketServer({port: 8080});
 
@@ -28,6 +33,11 @@ wss.on('connection', (ws, request) => {
         const res = navigationController(command, args)
         ws.send(res)
       }
+          if (commands.drawing.includes(command)) {
+        ws.send(command)
+          drawingController(command, args)
+      }
+
      
     })
 
